@@ -36,18 +36,6 @@ public class ActionController {
     }
 
 
-
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Action action, @PathVariable Long id) {
-        try {
-            Action existUser = actionService.getAction(id);
-            action.setId(id);
-            actionService.saveAction(action);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
 

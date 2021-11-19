@@ -16,7 +16,6 @@ public class Action {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
-    public String action;
-
-
+    public int user;
+    public int song;
 }
